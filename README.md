@@ -1,31 +1,34 @@
-# Sidebar_Widget
+# Flutter Sidebar Widget 🎯
 
-A Flutter package that provides a curated collection of custom widgets to simplify UI design and app development. With **Sidebar_Widget**, you can quickly create beautiful, reusable, and responsive user interfaces.
+[![Pub Version](https://img.shields.io/pub/v/sidebar_widget.svg)](https://pub.dev/packages/sidebar_widget)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
-# Flutter Custom Sidebar
-
-A highly customizable sidebar navigation package for Flutter applications with support for nested navigation, animations, and hover effects.
-
-## Features
-
-- 🎯 Customizable sidebar navigation
-- 📱 Responsive design
-- 🎨 Custom themes and colors
-- ⚡ Smooth animations
-- 🔗 Nested navigation support
-- 💫 Hover effects
-- 🎈 Overlay support for collapsed mode
+A highly customizable sidebar navigation package for Flutter applications that provides a beautiful, responsive, and feature-rich navigation experience. Perfect for admin panels, dashboards, and complex navigation structures.##sidebar
 
 
+## Features ✨
 
-## Installation
+- 🎨 **Highly Customizable** - Customize colors, width, icons, and more
+- 📱 **Responsive Design** - Automatically adapts to different screen sizes
+- 🔗 **Nested Navigation** - Support for multi-level navigation items
+- ⚡ **Smooth Animations** - Beautiful expand/collapse animations
+- 💫 **Hover Effects** - Interactive hover states for better UX
+- 🎈 **Dynamic Widgets** - Support for both navigation items and custom widgets
+- 🔄 **Route Integration** - Seamless integration with Flutter routing
+- 📦 **Easy to Use** - Simple API with minimal setup required
+
+
+## 📸 Screenshots
+
+![desktop-ui](https://github.com/masteronevil/sidebar-widget/blob/main/assets/desktop-gif.gif?raw=true)
+
+## Installation 📦
 
 Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  sidebar_widget: ^1.0.0
+  sidebar_widget: ^0.1.0
 ```
 
 Then run:
@@ -34,20 +37,21 @@ Then run:
 flutter pub get
 ```
 
-Import the package in your Dart code:
+## Usage 💻
 
+1. Import the package:
 ```dart
 import 'package:sidebar_widget/sidebar_widget.dart';
 ```
 
-## Example
 
-Here's a basic example of how to use the sidebar:
+### Basic Example
 
 ```dart
 import 'package:flutter/material.dart';
 import 'package:sidebar_widget/sidebar_widget.dart';
 import 'package:go_router/go_router.dart';
+
 class Sidebar extends StatelessWidget {
   const Sidebar({super.key});
 
@@ -55,64 +59,111 @@ class Sidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     final path = GoRouterState.of(context).uri.path;
     return CustomSideBar(
-      // currentRoute is As Web Url is current url or item provide usrl are same then it will be selected
-      currentRoute: path, // optional  is this is not set then it will be not work onRouteSelected
-
+      currentRoute: path,
       items: items,
       backgroundColor: Colors.black87,
       width: 250,
-      // if currentRoute is not set then it will be not work onRouteSelected
       onRouteSelected: (route) {
         context.goNamed(route);
       },
     );
   }
 }
-    
 ```
 
+### Navigation Items Configuration
+
 ```dart
-
 final List<dynamic> items = [
- 
-
   NavigationItem(
-    title: 'item1',
+    title: 'Dashboard',
     icon: Icons.dashboard,
     route: RouteNames.dashboard,
-    
   ),
-  // Widget 
-  Divider(),
-    NavigationItem(
-    title: 'item2',
-    icon: Icons.dashboard,
-    route: '/item-route'
-    // 
-      navItemOnTap: () {
-      print('tap')
-    },
-    
-  ),
-
+  
+  Divider(), // You can add widgets directly
+  
   NavigationItem(
-    title: 'subitem1',
+    title: 'Students',
     icon: Icons.school,
     route: RouteNames.students,
     subItems: [
-      Subitem(title: 'subitem2', route: 'RouteNames.subitem1'),
-      Subitem(title: 'subitem3', icon: Icons.assignment, route: 'RouteNames.subitem2'),
-    
+      Subitem(title: 'Student List', route: RouteNames.studentList),
+      Subitem(title: 'Attendance', icon: Icons.assignment, route: RouteNames.attendance),
     ],
   ),
-  // next widgt 
-  Container(child : Text('Widget1'))
-
+  
+  // Custom widgets
+  Container(child: Text('Custom Widget'))
 ];
-
 ```
 
+## Customization 🎨
+
+The sidebar is highly customizable. Here are some key properties:
+
+- `currentRoute`: Current active route
+- `items`: List of navigation items and widgets
+- `backgroundColor`: Sidebar background color
+- `width`: Sidebar width
+- `onRouteSelected`: Callback for route selection
+- `onRoute`: Enable/disable route handling
+
+## Mobile Support 📱
+
+The sidebar automatically adapts to mobile screens:
+
+![mobile-ui](https://github.com/masteronevil/sidebar-widget/blob/main/assets/mobile-gif.gif?raw=true)
+
+## Contributing 🤝
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License 📄
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support ❤️
+
+If you find this package helpful, please give it a ⭐️ on [GitHub](https://github.com/masteronevil/sidebar-widget)!
 
 
 
 
+## 📚 Documentation
+
+For detailed documentation and examples, visit our [LivePreview](https://masteronevil.github.io/sidebar-widget/).
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Authors
+
+- **Rupkumar Sarkar** - *Initial work* - [YourGithubProfile](https://github.com/masteronevil)
+
+## 🙏 Acknowledgments
+
+- Thanks to all contributors who have helped make this package better
+- Special thanks to the Flutter community
+
+## 📧 Contact
+
+If you have any questions, feel free to reach out:
+
+- Email: rupkumarcomputer@gmail.com
+- Instagram: [@masteronevil](https://www.instagram.com/masteronevil/)
+
+---
+
+Made with ❤️ by [Rupkumar Sarkar]
